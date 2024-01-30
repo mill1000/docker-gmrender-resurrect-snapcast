@@ -11,6 +11,8 @@ RUN make && make install DESTDIR=/gmrender-resurrect-install
 FROM alpine:latest
 COPY --from=build /gmrender-resurrect-install /
 RUN apk add --update tini libupnp gstreamer gstreamer-tools gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly
+RUN adduser -D -H gmediarender
+USER gmediarender
 ENV FRIENDLY_NAME=
 ENV UUID=
 ENV OPTIONS=
