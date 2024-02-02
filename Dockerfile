@@ -17,4 +17,4 @@ ENV FRIENDLY_NAME=
 ENV UUID=
 ENV OPTIONS=
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["/bin/sh", "-c", "/usr/local/bin/gmediarender --logfile=stdout ${FRIENDLY_NAME:+-f \"$FRIENDLY_NAME\"} ${UUID:+--uuid \"$UUID\"} $OPTIONS"]
+CMD ["/bin/sh", "-c", "eval /usr/local/bin/gmediarender --logfile=stdout ${FRIENDLY_NAME:+-f \"$FRIENDLY_NAME\"} ${UUID:+--uuid \"$UUID\"} $OPTIONS"]
