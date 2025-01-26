@@ -28,9 +28,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        # with:
-        #   # History/tags required to generate version info
-        #   fetch-depth: 0
+        with:
+          submodules: true
 
       - uses: docker/metadata-action@v5
         id: meta
