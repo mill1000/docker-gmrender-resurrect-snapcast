@@ -5,7 +5,7 @@ A Docker image for [gmrender-resurrect](https://github.com/hzeller/gmrender-resu
 ```yaml
 services:
   gmrender-resurrect:
-    image: gmrender-resurrect-snapcast:latest
+    image: ghcr.io/mill1000/gmrender-resurrect-snapcast:latest
     container_name: gmrender-resurrect
     restart: unless-stopped
     network_mode: host
