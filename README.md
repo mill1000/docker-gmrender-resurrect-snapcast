@@ -1,5 +1,5 @@
 # docker-gmrender-resurrect-snapcast
-A Dockerfile for the gmrender-resurrect tailored for Snapcast.
+A Docker image for [gmrender-resurrect](https://github.com/hzeller/gmrender-resurrect) tailored for use with a [Snapcast](https://github.com/badaix/snapcast) server.
 
 ## Compose Example
 ```yaml
