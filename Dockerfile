@@ -4,7 +4,7 @@ ARG UUID
 RUN apk add --update build-base autoconf automake libtool pkgconfig gstreamer-dev uuidgen
 WORKDIR /pupnp
 COPY pupnp .
-RUN ./bootstrap && ./configure --enable-ipv6 --enable-reuseaddr --enable-debug --disable-blocking-tcp-connections
+RUN ./bootstrap && ./configure --enable-ipv6 --enable-reuseaddr --disable-blocking-tcp-connections
 RUN make && make install && make install DESTDIR=/pupnp-install
 WORKDIR /gmrender-resurrect
 COPY gmrender-resurrect .
