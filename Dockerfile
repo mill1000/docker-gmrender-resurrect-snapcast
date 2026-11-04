@@ -1,5 +1,5 @@
 # Build image
-FROM alpine:3.22 AS build
+FROM alpine:3.24 AS build
 ARG UUID
 RUN apk add --update build-base autoconf automake libtool pkgconfig gstreamer-dev uuidgen cmake
 WORKDIR /pupnp
@@ -12,7 +12,7 @@ RUN ./autogen.sh && ./configure CPPFLAGS="-DGMRENDER_UUID='\"${UUID:-`uuidgen`}\
 RUN make && make install DESTDIR=/gmrender-resurrect-install
 
 # Run image
-FROM alpine:3.22
+FROM alpine:3.24
 COPY --from=build /pupnp-install /
 COPY --from=build /gmrender-resurrect-install /
 RUN apk add --update tini gstreamer gstreamer-tools gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly
